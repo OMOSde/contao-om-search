@@ -1,0 +1,99 @@
+<?xml version="1.0" ?>
+<xliff version="1.1">
+    <file datatype="php" original="src/Resources/contao/languages/en/default.php" source-language="en" target-language="de">
+        <body>
+            <trans-unit id="om_search.rootPage">
+                <source>Rootpage</source>
+                <target>Rootpage</target>
+            </trans-unit>
+            <trans-unit id="om_search.allRootPages">
+                <source>All root pages</source>
+                <target>All root pages</target>
+            </trans-unit>
+            <trans-unit id="om_search.lastKeywords">
+                <source>The last 30 keywords</source>
+                <target>The last 30 keywords</target>
+            </trans-unit>
+            <trans-unit id="om_search.time">
+                <source>Time</source>
+                <target>Time</target>
+            </trans-unit>
+            <trans-unit id="om_search.keyword">
+                <source>Keyword</source>
+                <target>Keyword</target>
+            </trans-unit>
+            <trans-unit id="om_search.results">
+                <source>Results</source>
+                <target>Results</target>
+            </trans-unit>
+            <trans-unit id="om_search.relevance">
+                <source>Results</source>
+                <target>Results</target>
+            </trans-unit>
+            <trans-unit id="om_search.queryType">
+                <source>Query type</source>
+                <target>Query type</target>
+            </trans-unit>
+            <trans-unit id="om_search.fuzzyType">
+                <source>Fuzzy</source>
+                <target>Fuzzy</target>
+            </trans-unit>
+            <trans-unit id="om_search.fuzzy.0">
+                <source>No</source>
+                <target>No</target>
+            </trans-unit>
+            <trans-unit id="om_search.fuzzy.1">
+                <source>Yes</source>
+                <target>Yes</target>
+            </trans-unit>
+            <trans-unit id="om_search.topKeywords">
+                <source>Top 20</source>
+                <target>Top 20</target>
+            </trans-unit>
+            <trans-unit id="om_search.stats">
+                <source>Statistics</source>
+                <target>Statistics</target>
+            </trans-unit>
+            <trans-unit id="om_search.period">
+                <source>Period</source>
+                <target>Period</target>
+            </trans-unit>
+            <trans-unit id="om_search.amount">
+                <source>Amount</source>
+                <target>Amount</target>
+            </trans-unit>
+            <trans-unit id="om_search.total">
+                <source>Total</source>
+                <target>Total</target>
+            </trans-unit>
+            <trans-unit id="om_search.monthly">
+                <source>Monthly</source>
+                <target>Monthly</target>
+            </trans-unit>
+            <trans-unit id="om_search.weekly">
+                <source>Weekly</source>
+                <target>Weekly</target>
+            </trans-unit>
+            <trans-unit id="om_search.daily">
+                <source>Daily</source>
+                <target>Daily</target>
+            </trans-unit>
+            <trans-unit id="om_search.export">
+                <source>Export to CSV</source>
+                <target>Export to CSV</target>
+            </trans-unit>
+            <trans-unit id="om_search.truncate">
+                <source>Clear all</source>
+                <target>Clear all</target>
+            </trans-unit>
+            <trans-unit id="om_search.truncateConfirm">
+                <source>Do you really want to delete ALL data?</source>
+                <target>Do you really want to delete ALL data?</target>
+            </trans-unit>
+            <trans-unit id="om_search.noKeywords">
+                <source>There are currently no search queries.</source>
+                <target>There are currently no search queries.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -1,0 +1,128 @@
+<div class="mod_om_search_keywords">
+    <div class="tl_panel">
+        <form action="<?= $this->url; ?>" method="post">
+            <input type="hidden" name="FORM_SUBMIT" value="FORM_OM_SEARCH_KEYWORDS"/>
+            <input type="hidden" name="REQUEST_TOKEN" value="<?= $this->requestToken; ?>">
+            <?php if ($this->rootPages): ?>
+            <div class="rootPages">
+                <label for="rootPage"><?= $this->lang['rootPage']; ?>:</label>
+                <select id="rootPage" name="rootPage" class="tl_select" onchange="this.form.submit()">
+                    <option value="0"><?= $this->lang['allRootPages']; ?></option>
+                    <?php foreach ($this->rootPages as $rootPage): ?>
+                    <option value="<?= $rootPage['id']; ?>"
+                    <?php if ($this->selectedRootPage == $rootPage['id']): ?> selected<?php endif; ?>><?= $rootPage['title'] . ' (' . $rootPage['language'] . ')'; ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+            <?php endif; ?>
+            <input type="submit" name="exportData" class="tl_submit" value="<?= $this->lang['export']; ?>"<?php if (!$this->lastKeywords): ?> disabled<?php endif; ?>>
+            <input type="submit" name="truncateTable" class="tl_submit" value="<?= $this->lang['truncate']; ?>" onclick="if (!confirm('<?= $this->lang[truncateConfirm]; ?>')) return false;" <?php if (!$this->lastKeywords): ?> disabled<?php endif; ?>>
+        </form>
+        <div class="clear"></div>
+    </div>
+
+    <div id="tl_buttons">
+        <a href="<?= $this->href; ?>" class="header_back" title="<?= $this->title; ?>"><?= $this->button; ?></a>
+    </div>
+
+    <div class="content">
+        <div class="left">
+            <div class="last-keywords">
+                <div class="tl_listing_container">
+                    <table class="last" cellspacing="0" cellpadding="0" border="0">
+                        <thead>
+                        <tr>
+                            <th colspan="6"><?= $this->lang['lastKeywords']; ?></th>
+                        </tr>
+                        <tr>
+                            <th class="col_0"><?= $this->lang['time']; ?></th>
+                            <th class="col_1"><?= $this->lang['keyword']; ?></th>
+                            <th class="col_2"><?= $this->lang['results']; ?></th>
+                            <th class="col_3"><?= $this->lang['relevance']; ?></th>
+                            <th class="col_4"><?= $this->lang['queryType']; ?></th>
+                            <th class="col_5"><?= $this->lang['fuzzyType']; ?></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php if ($this->lastKeywords) : ?>
+                        <?php foreach ($this->lastKeywords as $keyword): ?>
+                        <tr>
+                            <td class="col_0"><?= date('d.m.Y H:i', $keyword['tstamp']); ?></td>
+                            <td class="col_1"><?= $keyword['keyword']; ?></td>
+                            <td class="col_2"><?= $keyword['results']; ?></td>
+                            <td class="col_3"><?= $keyword['relevance']; ?></td>
+                            <td class="col_4"><?= $keyword['queryType']; ?></td>
+                            <td class="col_5"><?= $this->lang['fuzzy'][$keyword['fuzzy']]; ?></td>
+                        </tr>
+                        <?php endforeach; ?>
+                        <?php else: ?>
+                        <tr>
+                            <td colspan="6"><?= $this->lang['noKeywords']; ?></td>
+                        </tr>
+                        <?php endif; ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <?php if ($this->lastKeywords): ?>
+            <div class="stats tl_listing_container">
+                <table cellspacing="0" cellpadding="0" border="0">
+                    <thead>
+                    <tr>
+                        <th colspan="2"><?= $this->lang['stats']; ?></th>
+                    </tr>
+                    <tr>
+                        <th class="col_0"><?= $this->lang['period']; ?></th>
+                        <th class="col_1"><?= $this->lang['amount']; ?></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td class="col_0"><?= $this->lang['total']; ?></td>
+                        <td class="col_1"><?= $this->total; ?></td>
+                    </tr>
+                    <tr>
+                        <td class="col_0"><?= $this->lang['monthly']; ?></td>
+                        <td class="col_1"><?= $this->monthly; ?></td>
+                    </tr>
+                    <tr>
+                        <td class="col_0"><?= $this->lang['weekly']; ?></td>
+                        <td class="col_1"><?= $this->weekly; ?></td>
+                    </tr>
+                    <tr>
+                        <td class="col_0"><?= $this->lang['daily']; ?></td>
+                        <td class="col_1"><?= $this->daily; ?></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <?php endif; ?>
+
+            <?php if ($this->topKeywords): ?>
+            <div class="top-keywords tl_listing_container">
+                <table cellspacing="0" cellpadding="0" border="0">
+                    <thead>
+                    <tr>
+                        <th colspan="2"><?= $this->lang['topKeywords']; ?></th>
+                    </tr>
+                    <tr>
+                        <th class="col_0"><?= $this->lang['keyword']; ?></th>
+                        <th class="col_1"><?= $this->lang['amount']; ?></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php foreach ($this->topKeywords as $keyword): ?>
+                    <tr>
+                        <td class="col_0"><?= $keyword['keyword']; ?></td>
+                        <td class="col_1"><?= $keyword['count']; ?></td>
+                    </tr>
+                    <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
+            <?php endif; ?>
+        </div>
+    </div>
+</div>

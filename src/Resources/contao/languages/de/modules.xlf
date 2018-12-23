@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<xliff version="1.1">
+    <file datatype="php" original="src/Resources/contao/languages/en/modules.php" source-language="en" target-language="de">
+        <body>
+            <trans-unit id="MOD.keywords.0">
+                <source>Search requests</source>
+                <target>Suchanfragen</target>
+            </trans-unit>
+            <trans-unit id="ERR.keywords.1">
+                <source>Search requests</source>
+                <target>Suchanfragen einsehen</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
