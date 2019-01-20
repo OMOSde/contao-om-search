@@ -147,12 +147,13 @@ class ModuleOmSearchKeywords extends BackendModule
             $GLOBALS['TL_LANG']['om_search']['results'],
             $GLOBALS['TL_LANG']['om_search']['relevance'],
             $GLOBALS['TL_LANG']['om_search']['queryType'],
-            $GLOBALS['TL_LANG']['om_search']['fuzzyType']
+            $GLOBALS['TL_LANG']['om_search']['fuzzyType'],
+            $GLOBALS['TL_LANG']['om_search']['rootPage']
         ];
 
         // send data
         $objDatabase = \Database::getInstance();
-        $arrKeywords = $objDatabase->prepare("SELECT tstamp,keyword,results,relevance,queryType,fuzzy FROM tl_om_search_keywords ORDER BY tstamp DESC")->execute()->fetchAllAssoc();
+        $arrKeywords = $objDatabase->prepare("SELECT tstamp,keyword,results,relevance,queryType,fuzzy,rootPage FROM tl_om_search_keywords ORDER BY tstamp DESC")->execute()->fetchAllAssoc();
 
         $resOutput = fopen('php://output', 'w');
         fputcsv($resOutput, $arrTitles, ',');

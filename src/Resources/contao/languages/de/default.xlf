@@ -38,6 +38,10 @@
                 <source>Fuzzy</source>
                 <target>Fuzzy</target>
             </trans-unit>
+            <trans-unit id="om_search.rootPage">
+                <source>Root page</source>
+                <target>Startseite</target>
+            </trans-unit>
             <trans-unit id="om_search.fuzzy.0">
                 <source>No</source>
                 <target>Nein</target>
