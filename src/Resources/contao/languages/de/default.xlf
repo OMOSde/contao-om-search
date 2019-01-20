@@ -11,8 +11,8 @@
                 <target>Alle Startpunkte</target>
             </trans-unit>
             <trans-unit id="om_search.lastKeywords">
-                <source>The last 30 keywords</source>
-                <target>Die letzten 30 Suchbegriffe</target>
+                <source>The last 40 keywords</source>
+                <target>Die letzten 40 Suchbegriffe</target>
             </trans-unit>
             <trans-unit id="om_search.time">
                 <source>Time</source>
@@ -47,8 +47,8 @@
                 <target>Ja</target>
             </trans-unit>
             <trans-unit id="om_search.topKeywords">
-                <source>Top 20</source>
-                <target>Top 20</target>
+                <source>Top 30</source>
+                <target>Top 30</target>
             </trans-unit>
             <trans-unit id="om_search.stats">
                 <source>Statistics</source>

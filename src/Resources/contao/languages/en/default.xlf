@@ -11,8 +11,8 @@
                 <target>All root pages</target>
             </trans-unit>
             <trans-unit id="om_search.lastKeywords">
-                <source>The last 30 keywords</source>
-                <target>The last 30 keywords</target>
+                <source>The last 40 keywords</source>
+                <target>The last 40 keywords</target>
             </trans-unit>
             <trans-unit id="om_search.time">
                 <source>Time</source>
@@ -47,8 +47,8 @@
                 <target>Yes</target>
             </trans-unit>
             <trans-unit id="om_search.topKeywords">
-                <source>Top 20</source>
-                <target>Top 20</target>
+                <source>Top 30</source>
+                <target>Top 30</target>
             </trans-unit>
             <trans-unit id="om_search.stats">
                 <source>Statistics</source>

@@ -96,8 +96,8 @@ class ModuleOmSearchKeywords extends BackendModule
         $this->Template->daily = $objDatabase->prepare("SELECT ROUND(AVG(count)) AS daily FROM (SELECT COUNT(*) AS count FROM tl_om_search_keywords" . $strWhere . " GROUP BY DAY(FROM_UNIXTIME(tstamp))) as temp")->limit(1)->execute()->fetchAssoc()['daily'];
 
         // set template vars
-        $this->Template->lastKeywords = $objDatabase->prepare("SELECT * FROM tl_om_search_keywords" . $strWhere . " ORDER BY tstamp DESC LIMIT 30")->execute()->fetchAllAssoc();
-        $this->Template->topKeywords = $objDatabase->prepare("SELECT DISTINCT id,keyword,COUNT(*) as count FROM tl_om_search_keywords" . $strWhere . " GROUP BY id,keyword ORDER BY count DESC")->execute()->fetchAllAssoc();
+        $this->Template->lastKeywords = $objDatabase->prepare("SELECT * FROM tl_om_search_keywords" . $strWhere . " ORDER BY tstamp DESC LIMIT 40")->execute()->fetchAllAssoc();
+        $this->Template->topKeywords = $objDatabase->prepare("SELECT DISTINCT id,keyword,COUNT(*) as count FROM tl_om_search_keywords" . $strWhere . " GROUP BY id,keyword ORDER BY count DESC LIMIT 30")->execute()->fetchAllAssoc();
         $this->Template->rootPages = $arrRootPages;
         $this->Template->lang = $GLOBALS['TL_LANG']['om_search'];
         $this->Template->requestToken = \RequestToken::get();
