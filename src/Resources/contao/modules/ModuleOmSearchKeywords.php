@@ -97,7 +97,7 @@ class ModuleOmSearchKeywords extends BackendModule
 
         // set template vars
         $this->Template->lastKeywords = $objDatabase->prepare("SELECT * FROM tl_om_search_keywords" . $strWhere . " ORDER BY tstamp DESC LIMIT 30")->execute()->fetchAllAssoc();
-        $this->Template->topKeywords = $objDatabase->prepare("SELECT DISTINCT id,keyword,COUNT(*) as count FROM tl_om_search_keywords" . $strWhere . " GROUP BY keyword ORDER BY count DESC")->execute()->fetchAllAssoc();;
+        $this->Template->topKeywords = $objDatabase->prepare("SELECT DISTINCT id,keyword,COUNT(*) as count FROM tl_om_search_keywords" . $strWhere . " GROUP BY id,keyword ORDER BY count DESC")->execute()->fetchAllAssoc();;
         $this->Template->rootPages = $arrRootPages;
         $this->Template->lang = $GLOBALS['TL_LANG']['om_search'];
         $this->Template->requestToken = \RequestToken::get();
