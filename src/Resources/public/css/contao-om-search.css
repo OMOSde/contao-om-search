@@ -26,9 +26,9 @@
 }
 .mod_om_search_keywords .tl_panel .rootPages select {
     margin: 0;
-    padding: 7px 12px;
+    padding: 7px 32px 7px 12px;
     width: auto;
-    background-position: right -6px center;
+    background-position: right -24px center;
 }
 
 
