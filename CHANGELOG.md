@@ -1,5 +1,9 @@
 # Change log for contao bundle 'omosde/contao-om-search'
 
+### 1.0.2 (2019-02-21)
+
+ * Fixed: Non public listener 'customize_search' leads to a 'ServiceNotFoundExeption' on search
+
 ### 1.0.1 (2019-01-20)
 
  * Added: Root page now included in export
