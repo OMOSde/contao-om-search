@@ -3,3 +3,4 @@ services:
         class: OMOSde\ContaoOmSearchBundle\EventListener\CustomizeSearchListener
         arguments:
             - "@contao.framework"
+        public: true
