@@ -16,7 +16,7 @@
             </div>
             <?php endif; ?>
             <input type="submit" name="exportData" class="tl_submit" value="<?= $this->lang['export']; ?>"<?php if (!$this->lastKeywords): ?> disabled<?php endif; ?>>
-            <input type="submit" name="truncateTable" class="tl_submit" value="<?= $this->lang['truncate']; ?>" onclick="if (!confirm('<?= $this->lang[truncateConfirm]; ?>')) return false;" <?php if (!$this->lastKeywords): ?> disabled<?php endif; ?>>
+            <input type="submit" name="truncateTable" class="tl_submit" value="<?= $this->lang['truncate']; ?>" onclick="if (!confirm('<?= $this->lang['truncateConfirm']; ?>')) return false;" <?php if (!$this->lastKeywords): ?> disabled<?php endif; ?>>
         </form>
         <div class="clear"></div>
     </div>
