@@ -16,7 +16,7 @@
             </div>
             <?php endif; ?>
             <input type="submit" name="exportData" class="tl_submit" value="<?= $this->lang['export']; ?>"<?php if (!$this->lastKeywords): ?> disabled<?php endif; ?>>
-            <input type="submit" name="truncateTable" class="tl_submit" value="<?= $this->lang['truncate']; ?>" onclick="if (!confirm('<?= $this->lang[truncateConfirm]; ?>')) return false;" <?php if (!$this->lastKeywords): ?> disabled<?php endif; ?>>
+            <input type="submit" name="truncateTable" class="tl_submit" value="<?= $this->lang['truncate']; ?>" onclick="if (!confirm('<?= $this->lang['truncateConfirm']; ?>')) return false;" <?php if (!$this->lastKeywords): ?> disabled<?php endif; ?>>
         </form>
         <div class="clear"></div>
     </div>
@@ -52,7 +52,7 @@
                             <td class="col_2"><?= $keyword['results']; ?></td>
                             <td class="col_3"><?= $keyword['relevance']; ?></td>
                             <td class="col_4"><?= $keyword['queryType']; ?></td>
-                            <td class="col_5"><?= $this->lang['fuzzy'][$keyword['fuzzy']]; ?></td>
+                            <td class="col_5"><?= $this->lang['fuzzy'][($keyword['fuzzy']) ? 1 : 0]; ?></td>
                         </tr>
                         <?php endforeach; ?>
                         <?php else: ?>
