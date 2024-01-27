@@ -1,6 +1,0 @@
-services:
-    contao_om_search.listener.customize_search:
-        class: OMOSde\ContaoOmSearchBundle\EventListener\CustomizeSearchListener
-        arguments:
-            - "@contao.framework"
-        public: true

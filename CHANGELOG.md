@@ -1,12 +1,16 @@
 # Change log for contao bundle 'omosde/contao-om-search'
 
+### 2.0.0 (2024-01-16)
+
+ * Complete code rework in version 2.0 for Contao 5.2+
+
 ### 1.0.3 (2022-10-23)
 
 * Fixed: Some php 8 errors
 
 ### 1.0.2 (2019-02-21)
 
- * Fixed: Non public listener 'customize_search' leads to a 'ServiceNotFoundExeption' on search
+ * Fixed: Non-public listener 'customize_search' leads to a 'ServiceNotFoundExeption' on search
 
 ### 1.0.1 (2019-01-20)
 
