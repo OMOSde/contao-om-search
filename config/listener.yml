@@ -1,0 +1,10 @@
+services:
+  _defaults:
+    autoconfigure: true
+
+  contao_om_search.listener.customize_search:
+    class: OMOSde\ContaoOmSearchBundle\EventListener\Hooks\CustomizeSearchListener
+    arguments:
+      - "@security.helper"
+    tags:
+      - { name: contao.hook, hook: customizeSearch }

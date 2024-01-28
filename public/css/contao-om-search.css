@@ -1,0 +1,104 @@
+/**
+ * Contao bundle contao-om-search
+ * 
+ * @copyright OMOS.de 2024 <http://www.omos.de>
+ * @author    René Fehrmann <rene.fehrmann@omos.de>
+ * @link      https://github.com/OMOSde/contao-om-search
+ * @license   LGPL 3.0+
+ */
+
+/***** header *****/
+.mod_om_search_keywords .tl_panel {
+  padding: 0.5rem 0.625rem;
+}
+
+.mod_om_search_keywords .tl_panel .rootPages {
+  float: left;
+}
+
+.mod_om_search_keywords .tl_panel .rootPages label {
+  display: block;
+  float: left;
+  padding: 2px 0.5rem 0 0;
+  line-height: 1.875rem;
+}
+
+.mod_om_search_keywords .tl_panel .rootPages select {
+  margin: 0;
+  padding: 7px 32px 7px 12px;
+  width: auto;
+  background-position: right -24px center;
+}
+
+/***** content *****/
+.mod_om_search_keywords .content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.mod_om_search_keywords .content .left {
+  width: 70%;
+}
+
+.mod_om_search_keywords .content .right {
+  width: 25%;
+}
+
+.mod_om_search_keywords .content table {
+  width: 100%;
+}
+
+.mod_om_search_keywords .content th {
+  background: #f8f8f8;
+}
+
+.mod_om_search_keywords .content tr:first-of-type th {
+  border-top: 1px solid #e3e3e3;
+  background: #f0f0f0;
+}
+
+.mod_om_search_keywords .content th, .mod_om_search_keywords .content td {
+  padding: 5px;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+/***** last search *****/
+.mod_om_search_keywords .last .tl_folder ul {
+  overflow: hidden;
+}
+
+.mod_om_search_keywords .last .tl_folder li {
+  box-sizing: border-box;
+  float: left;
+  width: 33%;
+}
+
+@media only screen and (max-width: 1199px) {
+  .mod_om_search_keywords .content {
+    flex-wrap: wrap;
+  }
+
+  .mod_om_search_keywords .content .left {
+    width: 100%;
+  }
+
+  .mod_om_search_keywords .content .right {
+    display: flex;
+    width: auto;
+  }
+
+  .mod_om_search_keywords .content .right > div {
+    flex: 1;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .mod_om_search_keywords .content .right {
+    flex-direction: column;
+  }
+
+  .mod_om_search_keywords .content .right > div {
+    width: 100%;
+  }
+}

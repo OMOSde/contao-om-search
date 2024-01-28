@@ -1,0 +1,130 @@
+<div class="mod_om_search_keywords">
+  <div class="tl_panel">
+    <form action="{{ url }}" method="post">
+      <input type="hidden" name="FORM_SUBMIT" value="FORM_OM_SEARCH_KEYWORDS"/>
+      <input type="hidden" name="REQUEST_TOKEN" value="{{ requestToken }}">
+      {% if rootPages %}
+        <div class="rootPages">
+          <label for="rootPage">{{ i18n.rootPage }}:</label>
+          <select id="rootPage" name="rootPage" class="tl_select" onchange="this.form.submit()">
+            <option value="0">{{ i18n.allRootPages }}</option>
+            {% for rootPage in rootPages %}
+              <option
+                  value="{{ rootPage.id }}" {% if selectedRootPage is defined and selectedRootPage is same as rootPage.id %} selected{% endif %}>{{ rootPage.title ~ ' (' ~ rootPage.language ~ ')' }}</option>
+            {% endfor %}
+          </select>
+        </div>
+      {% endif %}
+      <input type="submit" name="exportData" class="tl_submit"
+             value="{{ i18n.export }}"{% if lastKeywords is empty %} disabled{% endif %}>
+      <input type="submit" name="truncateTable" class="tl_submit" value="{{ i18n.truncate }}"
+             onclick="if (!confirm('{{ i18n.truncateConfirm }}')) return false;" {% if lastKeywords is empty %} disabled{% endif %}>
+    </form>
+    <div class="clear"></div>
+  </div>
+
+  <div id="tl_buttons">
+    <a href="{{ title }}" class="header_back" title="{{ title }}">{{ button }}</a>
+  </div>
+
+  <div class="content">
+    <div class="left">
+      <div class="last-keywords">
+        <div class="tl_listing_container">
+          <table class="last">
+            <thead>
+            <tr>
+              <th colspan="6">{{ i18n.lastKeywords }}</th>
+            </tr>
+            <tr>
+              <th class="col_0">{{ i18n.time }}</th>
+              <th class="col_1">{{ i18n.keyword }}</th>
+              <th class="col_2">{{ i18n.results }}</th>
+              <th class="col_3">{{ i18n.relevance }}</th>
+              <th class="col_4">{{ i18n.queryType }}</th>
+              <th class="col_5">{{ i18n.fuzzyType }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% if lastKeywords %}
+              {% for lastKeyword in lastKeywords %}
+                <tr>
+                <td class="col_0">{{ lastKeyword.tstamp|date('d.m.Y H:i') }}</td>
+                <td class="col_1">{{ lastKeyword.keyword }}</td>
+                <td class="col_2">{{ lastKeyword.results }}</td>
+                <td class="col_3">{{ lastKeyword.relevance|number_format(3) }}</td>
+                <td class="col_4">{{ lastKeyword.queryType }}</td>
+                <td class="col_5">{% if lastKeyword.fuzzy %}{{ i18n.fuzzy.1 }}{% else %}{{ i18n.fuzzy.0 }}{% endif %}</td>
+                </tr>
+              {% endfor %}
+            {% else %}
+              <tr>
+                <td colspan="6">{{ i18n.noKeywords }}</td>
+              </tr>
+            {% endif %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="right">
+      {% if lastKeywords %}
+        <div class="stats tl_listing_container">
+          <table>
+            <thead>
+            <tr>
+              <th colspan="2">{{ i18n.stats }}</th>
+            </tr>
+            <tr>
+              <th class="col_0">{{ i18n.period }}</th>
+              <th class="col_1">{{ i18n.amount }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td class="col_0">{{ i18n.total }}</td>
+              <td class="col_1">{{ total }}</td>
+            </tr>
+            <tr>
+              <td class="col_0">{{ i18n.monthly }}</td>
+              <td class="col_1">{{ monthly }}</td>
+            </tr>
+            <tr>
+              <td class="col_0">{{ i18n.weekly }}</td>
+              <td class="col_1">{{ weekly }}</td>
+            </tr>
+            <tr>
+              <td class="col_0">{{ i18n.daily }}</td>
+              <td class="col_1">{{ daily }}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      {% endif %}
+
+      {% if topKeywords %}
+        <div class="top-keywords tl_listing_container">
+          <table>
+            <thead>
+            <tr>
+              <th colspan="2">{{ i18n.topKeywords }}</th>
+            </tr>
+            <tr>
+              <th class="col_0">{{ i18n.keyword }}</th>
+              <th class="col_1">{{ i18n.amount }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for topKeyword in topKeywords %}
+              <tr>
+                <td class="col_0">{{ topKeyword.keyword }}</td>
+                <td class="col_1">{{ topKeyword.count }}</td>
+              </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

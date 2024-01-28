@@ -1,5 +1,9 @@
 # Change log for contao bundle 'omosde/contao-om-search'
 
+### 2.0.1 (2024-01-28)
+
+ * Fixed: Some files are missing
+
 ### 2.0.0 (2024-01-16)
 
  * Complete code rework in version 2.0 for Contao 5.2+
